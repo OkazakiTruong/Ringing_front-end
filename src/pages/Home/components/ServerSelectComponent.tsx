@@ -1,7 +1,7 @@
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import { Button } from '@/components/ui/button'
-import CustomTooltip from "./CustomTooltip"
-import CustomMenuBar from "./CustomMenuBar"
+import CustomTooltip from "../../../components/normal/CustomTooltip"
+import CustomMenuBar from "../../../components/normal/CustomMenuBar"
 import { PlusIcon, GearIcon } from "@radix-ui/react-icons"
 
 const listMenuOption = [

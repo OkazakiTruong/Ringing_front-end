@@ -1,5 +1,6 @@
+import ChannelLayout from "@/Layout/ChannelLayout";
 import MainLayout from "@/Layout/MainLayout";
-import Channel from "@/pages/Home/Channel";
+import Friends from "@/pages/Home/Friends";
 import Message from "@/pages/Home/Message";
 
 import {
@@ -13,11 +14,15 @@ const routers = createBrowserRouter([
     children: [
       {
         path: ":serverId",
-        element: <Channel/>,
+        element: <ChannelLayout/>,
         children: [
           {
             path: "message/:messageId",
             element: <Message/>,
+          },
+          {
+            path: "friends",
+            element: <Friends/>,
           },
         ],
       },
