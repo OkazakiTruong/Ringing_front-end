@@ -15,12 +15,13 @@ type Props = {
         content: string,
         menubarShortCut?: string, 
         menubarSeparator?: boolean,
+        menubarIcon?:React.ElementType,
         onClick: () => void
   }[],
   side?: "top" | "right" | "bottom" | "left",
 }
 
-export default function CustomMenuBar({children, listMenuOption,side="right"}:Props) {
+export default function CustomMenuBar({children, listMenuOption, side="right"}:Props) {
   return (
     <Menubar>
     <MenubarMenu>
@@ -31,8 +32,9 @@ export default function CustomMenuBar({children, listMenuOption,side="right"}:Pr
                     <MenubarItem key={index} onClick={item?.onClick}>
                         {item?.content}
                         {item.menubarShortCut && <MenubarShortcut>{item.menubarShortCut}</MenubarShortcut>}
+                        {item.menubarIcon && <item.menubarIcon/>}
                     </MenubarItem>
-                    {item.menubarSeparator && <MenubarSeparator /> }
+                    {item.menubarSeparator && <MenubarSeparator key={index} /> }
                 </>
             ))}
         </MenubarContent>
