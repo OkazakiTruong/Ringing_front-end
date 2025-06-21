@@ -3,6 +3,7 @@ import ChannelLayout from "@/Layout/ChannelLayout";
 import MainLayout from "@/Layout/MainLayout";
 import Login from "@/pages/Auth/Login";
 import Register from "@/pages/Auth/Register";
+import VerifyRegister from "@/pages/Auth/VerifyRegister";
 import Friends from "@/pages/Home/Friends";
 import Message from "@/pages/Home/Message";
 
@@ -41,7 +42,7 @@ const routers = createBrowserRouter([
   },
   {
     path: "/auth",
-    element: <AuthLayout />,
+    // element: <AuthLayout />,
     children: [
       {
         path: "login",
@@ -50,6 +51,10 @@ const routers = createBrowserRouter([
       {
         path: "register",
         element: <Register />,
+      },
+      {
+        path: "register/verify",
+        element: <VerifyRegister />,
       },
     ],
   },
