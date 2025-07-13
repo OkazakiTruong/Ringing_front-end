@@ -15,6 +15,8 @@ import {
   FormLabel,
   FormMessage,
 } from "@/components/ui/form";
+import type { IUserRegisterDto } from "@/interface/user.interface";
+import { register } from "@/api/auth.api";
 
 const FormSchema = z
   .object({
@@ -57,6 +59,10 @@ export function RegisterForm({
     },
   });
 
+  async function handleSubmit(data: IUserRegisterDto) {
+    await register(data);
+  }
+
   function onSubmit(data: z.infer<typeof FormSchema>) {
     toast("Registration submitted successfully", {
       description: (
@@ -65,6 +71,7 @@ export function RegisterForm({
         </pre>
       ),
     });
+    handleSubmit(data);
   }
 
   return (
